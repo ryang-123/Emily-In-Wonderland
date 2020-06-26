@@ -101,6 +101,17 @@ function moveForward() {
   imgObj.style.top = everySpot[x][0] + 'px';
   imgObj.style.left =  everySpot[y][1] + 'px';
 
+  if (parseInt(imgObj.style.top) == -709 && parseInt(imgObj.style.left ) == -92 ) {
+    swal("Congratulations!", "With your help, Emily was able to make it to the cottage on time!" , "success");
+    setTimeout(function(){
+      var url = 'https://www.youtube.com/watch?v=3GwjfUFyY6M';
+      window.open(url,'_blank');
+      window.open(url);
+
+    }, 2000);
+
+  }
+
   //swal("Failed move", RANDOM TEXT HERE, "error"); --> for bad moves
 }
 
