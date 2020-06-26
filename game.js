@@ -78,13 +78,30 @@ var y = 0;
 //}
 //avatar initial spot
 function init() {
+
   imgObj = document.getElementById('avatar');
   imgObj.style.position= 'relative';
   //imgObj.style.top = '-36px';
   //imgObj.style.left = '-1161px';
   imgObj.style.top = everySpot[x][0] + 'px';
   imgObj.style.left =  everySpot[y][1] + 'px';
-  swal("Welcome!", "Emily has fallen into wonderland just before her birthday trip to the cottage. Help her navigate her way through the board so she can make it out on time! \n\n To play, roll the dice until she successfully reaches the end. BEWARE, some spots will advance you forward, while others will make you go back! \n\n\n\n CONTROLS: \n Press the roll dice button and follow the board!.", "info");
+
+  swal("Welcome!", "Emily has fallen into wonderland just before her birthday trip to the cottage. Help her navigate her way through the board so she can make it out on time! ", "info")
+  .then((value) => {
+      var introAudio = document.getElementById("intro");
+      introAudio.volume = 0.05;
+      introAudio.play();
+     swal("Instructions", "\n\n To play, roll the dice until she successfully reaches the end. BEWARE, some spots will advance you forward, while others will make you go back! \n\n\n\n CONTROLS: \n Press the roll dice button and follow the board!\n **Yellow spots advance you one spot forward** \n **Red spots make you go back one spot.**", "info");
+  });
+  //swal("Welcome!", "Emily has fallen into wonderland just before her birthday trip to the cottage. Help her navigate her way through the board so she can make it out on time! ", "info");
+  //var audio = new Audio('opening.mp3');
+  //audio.play();
+  //swal("Instructions", "\n\n To play, roll the dice until she successfully reaches the end. BEWARE, some spots will advance you forward, while others will make you go back! \n\n\n\n CONTROLS: \n Press the roll dice button and follow the board!\n **Yellow spots advance you one spot forward** \n **Red spots make you go back one spot.**", "info");
+
+  // setTimeout(function(){
+  //     console.log("start");
+  //
+  // }, 90000);
 }
 //will move up diagonally
 
@@ -104,6 +121,8 @@ function moveForward() {
   if (parseInt(imgObj.style.top) == -709 && parseInt(imgObj.style.left ) == -92 ) {
     swal("Congratulations!", "With your help, Emily was able to make it to the cottage on time!" , "success");
     setTimeout(function(){
+      var introAudio = document.getElementById("intro");
+      introAudio.pause();
       var url = 'https://www.youtube.com/watch?v=3GwjfUFyY6M';
       var windowReference = window.open();
       windowReference.location.assign(url);
@@ -145,24 +164,6 @@ function moveLogic() {
    for (var i = 0; i < roll; i++) {
      moveForward();
    }
-
-   // var landedTop = imgObj.style.top;
-   // var landedLeft = imgObj.style.left;
-   //
-   // console.log("HERE");
-   // console.log(parseInt(landedTop));
-   // console.log(landedLeft.toString());
-   //
-   // var goodLanded = goodSpots.includes([landedTop.toString(),landedLeft.toString()]);
-   // var badLanded = badSpots.includes([landedTop,landedLeft]);
-   // var isGoodTop = goodTop.includes(parseInt(landedTop));
-   // var isGoodLeft = goodLeft.includes(parseInt(landedLeft));
-   // var isBadTop = badTop.includes(parseInt(landedTop));
-   // var isBadLeft = badLeft.includes(parseInt(landedLeft));
-   // console.log(isGoodTop);
-   // console.log(isGoodLeft);
-   // console.log(isBadTop);
-   // console.log(isBadLeft);
 
    setTimeout(function(){
      var landedTop = imgObj.style.top;
