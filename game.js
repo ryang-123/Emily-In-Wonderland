@@ -9,7 +9,7 @@ var goodMovesText = [
   "Emily reorganized her room!",
   "Emily started her own successful babysitting business!",
   "Emily rode the bull at CNE successfully!" ,
-  "Emily killed a spide!r (jk prob didn’t happen but let's say she did)",
+  "Emily killed a spider! (jk probably didn’t happen but let's say she did)",
   "Emily knocked out her cousin!",
   "Emily makes Ryan smile. GOAT girlfriend alert."
 ];
@@ -84,7 +84,7 @@ function init() {
   //imgObj.style.left = '-1161px';
   imgObj.style.top = everySpot[x][0] + 'px';
   imgObj.style.left =  everySpot[y][1] + 'px';
-  swal("Welcome!", "Emily has fallen into wonderland just before her birthday trip to the cottage. Help her navigate her way through the board so she can make it out on time! \n\n To play, roll the dice until she successfully reaches the end. BEWARE, some spots will advance you forward, while others will make you go back!", "info");
+  swal("Welcome!", "Emily has fallen into wonderland just before her birthday trip to the cottage. Help her navigate her way through the board so she can make it out on time! \n\n To play, roll the dice until she successfully reaches the end. BEWARE, some spots will advance you forward, while others will make you go back! \n\n\n\n CONTROLS: \n Press the roll dice button and follow the board!.", "info");
 }
 //will move up diagonally
 
