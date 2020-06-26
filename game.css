@@ -16,7 +16,8 @@
   position: relative;
   top: 100px;
   left: 30px;
-  border: 2px yellow solid;
+  border: 4px #52FF33 solid;
+  border-radius: 45%;
 }
 
 .rollButton {

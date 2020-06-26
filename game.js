@@ -161,11 +161,16 @@ function moveLogic() {
   var numGood = goodMovesText.length - 1
   var numBad = badMovesText.length - 1
 
-   for (var i = 0; i < roll; i++) {
-     moveForward();
-   }
+  setTimeout(function(){
+    for (var i = 0; i < roll; i++) {
+      moveForward();
+    }
+
+  }, 500);
 
    setTimeout(function(){
+
+
      var landedTop = imgObj.style.top;
      var landedLeft = imgObj.style.left;
 
